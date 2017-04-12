@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         rpbItem1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.showToast("计时动画结束，进入主界面");
+                ToastUtils.showToast("点击跳过广告，进入主界面");
                 rpbItem1.clearAnimation();
                 toMainActivity();
             }
