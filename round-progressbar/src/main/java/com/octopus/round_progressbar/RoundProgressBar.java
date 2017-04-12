@@ -15,6 +15,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 
@@ -70,7 +71,7 @@ public class RoundProgressBar extends View {
         progress = typedArray.getFloat(R.styleable.RoundProgressBar_progress, 0);
         textProgressSize = typedArray.getDimension(R.styleable.RoundProgressBar_textProgressSize, sp2px(14));
         textTitleSize = typedArray.getDimension(R.styleable.RoundProgressBar_textTitleSize, sp2px(12));
-        roundWidth = typedArray.getDimension(R.styleable.RoundProgressBar_roundWidth, 4);
+        roundWidth = typedArray.getDimension(R.styleable.RoundProgressBar_roundWidth, dip2px(4));
 
         isShowProgress = typedArray.getBoolean(R.styleable.RoundProgressBar_isShowProgress, true);
 
@@ -229,5 +230,10 @@ public class RoundProgressBar extends View {
     private int sp2px(float spValue) {
         final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
+    }
+
+    private int dip2px(float dipValue) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dipValue,
+                Resources.getSystem().getDisplayMetrics());
     }
 }
