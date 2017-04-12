@@ -226,7 +226,7 @@ public class RoundProgressBar extends View {
         }
     }
 
-    public static int sp2px(float spValue) {
+    private int sp2px(float spValue) {
         final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
