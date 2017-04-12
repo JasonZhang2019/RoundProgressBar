@@ -18,15 +18,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 
-/**
- * author Octupos
- * create on 2016/8/10 9:53
- * description RoundProgressBar animation.
- * attention width equals height. Now 12 attrs.
- * use startAnimation to start the animation
- */
 public class RoundProgressBar extends View {
-    // ------------------start-----------------
     private int roundColor;
     private int roundProgressColor;
     private int roundInsideColor;
@@ -43,8 +35,6 @@ public class RoundProgressBar extends View {
 
     private String progressStr;
     private boolean isShowProgress = true;
-
-    // ------------------end-----------------
 
     private Paint paint;
     private TextPaint textPaint;
@@ -71,7 +61,6 @@ public class RoundProgressBar extends View {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RoundProgressBar);
 
-        // get values
         roundColor = typedArray.getColor(R.styleable.RoundProgressBar_roundColor, Color.GRAY);
         roundProgressColor = typedArray.getColor(R.styleable.RoundProgressBar_roundProgressColor, Color.RED);
         roundInsideColor = typedArray.getColor(R.styleable.RoundProgressBar_roundInsideColor, Color.TRANSPARENT);
@@ -90,11 +79,8 @@ public class RoundProgressBar extends View {
         titleStr = typedArray.getString(R.styleable.RoundProgressBar_titleStr);
 
         typedArray.recycle();
-
-//        startAnimation();
     }
 
-    // -----------------------start----------------------
     public void setRoundColor(int roundColor) {
         this.roundColor = roundColor;
     }
@@ -115,20 +101,13 @@ public class RoundProgressBar extends View {
         this.textTitleColor = textTitleColor;
     }
 
-    // animationSet, must do like this.
     private void setProgress(float progress) {
         this.progress = progress;
         postInvalidate();
     }
 
-    /**
-     * set progress
-     *
-     * @param progress progressValue
-     */
     public void resetProgress(float progress) {
         this.progress = progress;
-//        startAnimation();
     }
 
     public void setTextProgressSize(float textProgressSize) {
@@ -154,7 +133,6 @@ public class RoundProgressBar extends View {
     public void setShowProgress(boolean isShowProgress) {
         this.isShowProgress = isShowProgress;
     }
-    // -----------------------end----------------------
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -192,7 +170,6 @@ public class RoundProgressBar extends View {
             textPaint.setStrokeWidth(0);
             textPaint.setColor(textProgressColor);
             textPaint.setTextSize(textProgressSize);
-//            textPaint.setTypeface(Typeface.DEFAULT_BOLD);
 
             textWidth = textPaint.measureText(progressStr);
             canvas.drawText(progressStr, center - textWidth / 2, TextUtils.isEmpty(titleStr) ? center + textProgressSize / 2 : center, textPaint);
@@ -249,12 +226,6 @@ public class RoundProgressBar extends View {
         }
     }
 
-    /**
-     * sp to px
-     *
-     * @param spValue spValue
-     * @return px pxValue
-     */
     public static int sp2px(float spValue) {
         final float fontScale = Resources.getSystem().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
