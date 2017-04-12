@@ -55,8 +55,8 @@ public void clearAnimation()
 | isShowProgress| 是否显示占比。若是则显示progress%，否则显示progressStr,默认为true | app:isShowProgress="true" | setShowProgress(boolean isShowProgress) |
 | progressStr| isShowProgress=true的时候显示progress%。否则显示该信息。默认为空 | app:progressStr="progressStr" | setProgressStr(String progressStr) |
 #### 5. 注意事项
-所有属性均可以选择设置或不设置，选择在xml中固定设置还是在java代码中动态设置。
-需要设置该控件的宽高一致！
-onDestroy方法中要执行控件的clearAnimation()方法！
-若使用该控件用于app开屏广告页的跳过广告倒计时，请参照Demo源码，调用启动动画方法，监听动画，动画正常结束时跳转。若人为点击直接跳转，则要记得清除动画，且在监听到是取消的时候不再执行动画结束方法时的跳转，防止多次跳转。
+- 所有属性均可以选择设置或不设置，选择在xml中固定设置还是在java代码中动态设置。
+- 需要设置该控件的宽高一致！
+- onDestroy方法中要执行控件的clearAnimation()方法！
+- 若使用该控件用于app开屏广告页的跳过广告倒计时，请参照Demo源码，调用启动动画方法，监听动画，动画正常结束时跳转。若人为点击直接跳转，则要记得清除动画，且在监听到是取消的时候不再执行动画结束方法时的跳转，防止多次跳转。
 
