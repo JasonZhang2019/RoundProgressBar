@@ -50,7 +50,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:appcompat-v7:25.1.1'
     testCompile 'junit:junit:4.12'
 }
 
@@ -72,7 +72,7 @@ group = "com.octopus"
 //发布到JCenter上的项目名字，必须填写
 def libName = "round-progressbar"
 // 版本号，下次更新是只需要更改版本号即可
-version = "0.0.2"
+version = "0.0.3"
 /**  上面配置后上传至jcenter后的编译路径是这样的： compile 'com.octopus:round-progressbar:0.0.1'  **/
 
 //生成源文件
